@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76104DB2F61347D9C52CDBC7 /* libPods-RACzhihu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7209CEFE8B639111F2A128E /* libPods-RACzhihu.a */; };
 		CD2DC5C91D17EF4A00BECF63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2DC5C81D17EF4A00BECF63 /* main.m */; };
 		CD2DC5CC1D17EF4A00BECF63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2DC5CB1D17EF4A00BECF63 /* AppDelegate.m */; };
-		CD2DC5CF1D17EF4A00BECF63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2DC5CE1D17EF4A00BECF63 /* ViewController.m */; };
 		CD2DC5D21D17EF4A00BECF63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2DC5D01D17EF4A00BECF63 /* Main.storyboard */; };
 		CD2DC5D41D17EF4A00BECF63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2DC5D31D17EF4A00BECF63 /* Assets.xcassets */; };
 		CD2DC5D71D17EF4A00BECF63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2DC5D51D17EF4A00BECF63 /* LaunchScreen.storyboard */; };
 		CD2DC5E21D17EF4A00BECF63 /* RACzhihuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2DC5E11D17EF4A00BECF63 /* RACzhihuTests.m */; };
 		CD2DC5ED1D17EF4A00BECF63 /* RACzhihuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2DC5EC1D17EF4A00BECF63 /* RACzhihuUITests.m */; };
+		CD35180E1D18DAD40053065D /* launchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35180D1D18DAD40053065D /* launchViewModel.m */; };
+		CD3518111D18DB540053065D /* launchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518101D18DB540053065D /* launchViewController.m */; };
+		CD3518151D18FF3F0053065D /* launchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518141D18FF3F0053065D /* launchModel.m */; };
+		CD35181E1D190E550053065D /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35181D1D190E550053065D /* mainViewController.m */; };
+		CD3518211D192D680053065D /* zhnZhihuWebManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518201D192D680053065D /* zhnZhihuWebManager.m */; };
+		CD3518281D19310B0053065D /* zhnZhihuWebManager+launch.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518271D19310B0053065D /* zhnZhihuWebManager+launch.m */; };
+		CD35182B1D1932620053065D /* zhnZhihuWebManager+mainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35182A1D1932620053065D /* zhnZhihuWebManager+mainVC.m */; };
+		CD35182E1D19353F0053065D /* mainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35182D1D19353F0053065D /* mainViewModel.m */; };
+		CD3518311D1937C70053065D /* mainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518301D1937C70053065D /* mainModel.m */; };
+		CD35189C1D1A34370053065D /* UIView+zhnAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35189B1D1A34370053065D /* UIView+zhnAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2486E6AE5B33E7CDA3EA782D /* Pods-RACzhihu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACzhihu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACzhihu/Pods-RACzhihu.debug.xcconfig"; sourceTree = "<group>"; };
+		76462CCA62E36A86EB5AA7F2 /* Pods-RACzhihu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACzhihu.release.xcconfig"; path = "Pods/Target Support Files/Pods-RACzhihu/Pods-RACzhihu.release.xcconfig"; sourceTree = "<group>"; };
 		CD2DC5C41D17EF4A00BECF63 /* RACzhihu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACzhihu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2DC5C81D17EF4A00BECF63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CD2DC5CA1D17EF4A00BECF63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD2DC5CB1D17EF4A00BECF63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CD2DC5CD1D17EF4A00BECF63 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CD2DC5CE1D17EF4A00BECF63 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CD2DC5D11D17EF4A00BECF63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD2DC5D31D17EF4A00BECF63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD2DC5D61D17EF4A00BECF63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +61,28 @@
 		CD2DC5E81D17EF4A00BECF63 /* RACzhihuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RACzhihuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2DC5EC1D17EF4A00BECF63 /* RACzhihuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACzhihuUITests.m; sourceTree = "<group>"; };
 		CD2DC5EE1D17EF4A00BECF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD35180C1D18DAD40053065D /* launchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = launchViewModel.h; sourceTree = "<group>"; };
+		CD35180D1D18DAD40053065D /* launchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = launchViewModel.m; sourceTree = "<group>"; };
+		CD35180F1D18DB540053065D /* launchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = launchViewController.h; sourceTree = "<group>"; };
+		CD3518101D18DB540053065D /* launchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = launchViewController.m; sourceTree = "<group>"; };
+		CD3518121D18DC980053065D /* RACzhihuPch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACzhihuPch.pch; sourceTree = SOURCE_ROOT; };
+		CD3518131D18FF3F0053065D /* launchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = launchModel.h; sourceTree = "<group>"; };
+		CD3518141D18FF3F0053065D /* launchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = launchModel.m; sourceTree = "<group>"; };
+		CD35181C1D190E550053065D /* mainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewController.h; sourceTree = "<group>"; };
+		CD35181D1D190E550053065D /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
+		CD35181F1D192D680053065D /* zhnZhihuWebManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhnZhihuWebManager.h; sourceTree = "<group>"; };
+		CD3518201D192D680053065D /* zhnZhihuWebManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhnZhihuWebManager.m; sourceTree = "<group>"; };
+		CD3518261D19310B0053065D /* zhnZhihuWebManager+launch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zhnZhihuWebManager+launch.h"; sourceTree = "<group>"; };
+		CD3518271D19310B0053065D /* zhnZhihuWebManager+launch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "zhnZhihuWebManager+launch.m"; sourceTree = "<group>"; };
+		CD3518291D1932620053065D /* zhnZhihuWebManager+mainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zhnZhihuWebManager+mainVC.h"; sourceTree = "<group>"; };
+		CD35182A1D1932620053065D /* zhnZhihuWebManager+mainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "zhnZhihuWebManager+mainVC.m"; sourceTree = "<group>"; };
+		CD35182C1D19353F0053065D /* mainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewModel.h; sourceTree = "<group>"; };
+		CD35182D1D19353F0053065D /* mainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewModel.m; sourceTree = "<group>"; };
+		CD35182F1D1937C70053065D /* mainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainModel.h; sourceTree = "<group>"; };
+		CD3518301D1937C70053065D /* mainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainModel.m; sourceTree = "<group>"; };
+		CD35189A1D1A34370053065D /* UIView+zhnAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+zhnAdd.h"; sourceTree = "<group>"; };
+		CD35189B1D1A34370053065D /* UIView+zhnAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+zhnAdd.m"; sourceTree = "<group>"; };
+		E7209CEFE8B639111F2A128E /* libPods-RACzhihu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RACzhihu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76104DB2F61347D9C52CDBC7 /* libPods-RACzhihu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +114,14 @@
 		CD2DC5BB1D17EF4A00BECF63 = {
 			isa = PBXGroup;
 			children = (
+				CD3518121D18DC980053065D /* RACzhihuPch.pch */,
 				CD2DC5C61D17EF4A00BECF63 /* RACzhihu */,
+				CD3518321D1939B30053065D /* lib */,
 				CD2DC5E01D17EF4A00BECF63 /* RACzhihuTests */,
 				CD2DC5EB1D17EF4A00BECF63 /* RACzhihuUITests */,
 				CD2DC5C51D17EF4A00BECF63 /* Products */,
+				EDF11DD887D28E1BDD7A378F /* Pods */,
+				F02362AFE08E16D008973603 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +140,12 @@
 			children = (
 				CD2DC5CA1D17EF4A00BECF63 /* AppDelegate.h */,
 				CD2DC5CB1D17EF4A00BECF63 /* AppDelegate.m */,
-				CD2DC5CD1D17EF4A00BECF63 /* ViewController.h */,
-				CD2DC5CE1D17EF4A00BECF63 /* ViewController.m */,
 				CD2DC5D01D17EF4A00BECF63 /* Main.storyboard */,
+				CD3518991D1A34150053065D /* category */,
+				CD3518221D192D6E0053065D /* netWork */,
+				CD3518181D19088F0053065D /* viewModel */,
+				CD3518171D1908860053065D /* model */,
+				CD3518161D1908770053065D /* view */,
 				CD2DC5D31D17EF4A00BECF63 /* Assets.xcassets */,
 				CD2DC5D51D17EF4A00BECF63 /* LaunchScreen.storyboard */,
 				CD2DC5D81D17EF4A00BECF63 /* Info.plist */,
@@ -140,6 +180,86 @@
 			path = RACzhihuUITests;
 			sourceTree = "<group>";
 		};
+		CD3518161D1908770053065D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				CD35180F1D18DB540053065D /* launchViewController.h */,
+				CD3518101D18DB540053065D /* launchViewController.m */,
+				CD35181C1D190E550053065D /* mainViewController.h */,
+				CD35181D1D190E550053065D /* mainViewController.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		CD3518171D1908860053065D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CD3518131D18FF3F0053065D /* launchModel.h */,
+				CD3518141D18FF3F0053065D /* launchModel.m */,
+				CD35182F1D1937C70053065D /* mainModel.h */,
+				CD3518301D1937C70053065D /* mainModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		CD3518181D19088F0053065D /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD35180C1D18DAD40053065D /* launchViewModel.h */,
+				CD35180D1D18DAD40053065D /* launchViewModel.m */,
+				CD35182C1D19353F0053065D /* mainViewModel.h */,
+				CD35182D1D19353F0053065D /* mainViewModel.m */,
+			);
+			name = viewModel;
+			sourceTree = "<group>";
+		};
+		CD3518221D192D6E0053065D /* netWork */ = {
+			isa = PBXGroup;
+			children = (
+				CD35181F1D192D680053065D /* zhnZhihuWebManager.h */,
+				CD3518201D192D680053065D /* zhnZhihuWebManager.m */,
+				CD3518261D19310B0053065D /* zhnZhihuWebManager+launch.h */,
+				CD3518271D19310B0053065D /* zhnZhihuWebManager+launch.m */,
+				CD3518291D1932620053065D /* zhnZhihuWebManager+mainVC.h */,
+				CD35182A1D1932620053065D /* zhnZhihuWebManager+mainVC.m */,
+			);
+			name = netWork;
+			sourceTree = "<group>";
+		};
+		CD3518321D1939B30053065D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
+			path = RACzhihuTests;
+			sourceTree = "<group>";
+		};
+		CD3518991D1A34150053065D /* category */ = {
+			isa = PBXGroup;
+			children = (
+				CD35189A1D1A34370053065D /* UIView+zhnAdd.h */,
+				CD35189B1D1A34370053065D /* UIView+zhnAdd.m */,
+			);
+			name = category;
+			sourceTree = "<group>";
+		};
+		EDF11DD887D28E1BDD7A378F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2486E6AE5B33E7CDA3EA782D /* Pods-RACzhihu.debug.xcconfig */,
+				76462CCA62E36A86EB5AA7F2 /* Pods-RACzhihu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F02362AFE08E16D008973603 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7209CEFE8B639111F2A128E /* libPods-RACzhihu.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD2DC5F11D17EF4A00BECF63 /* Build configuration list for PBXNativeTarget "RACzhihu" */;
 			buildPhases = (
+				54B7EAB934C3640B531CA3E4 /* 📦 Check Pods Manifest.lock */,
 				CD2DC5C01D17EF4A00BECF63 /* Sources */,
 				CD2DC5C11D17EF4A00BECF63 /* Frameworks */,
 				CD2DC5C21D17EF4A00BECF63 /* Resources */,
+				F95B6F1DF71F4329C9E1E2E7 /* 📦 Embed Pods Frameworks */,
+				4C1CE2345DD16269F1FA41D2 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,14 +388,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C1CE2345DD16269F1FA41D2 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RACzhihu/Pods-RACzhihu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54B7EAB934C3640B531CA3E4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F95B6F1DF71F4329C9E1E2E7 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RACzhihu/Pods-RACzhihu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD2DC5C01D17EF4A00BECF63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2DC5CF1D17EF4A00BECF63 /* ViewController.m in Sources */,
+				CD3518151D18FF3F0053065D /* launchModel.m in Sources */,
+				CD35182E1D19353F0053065D /* mainViewModel.m in Sources */,
+				CD35182B1D1932620053065D /* zhnZhihuWebManager+mainVC.m in Sources */,
+				CD3518311D1937C70053065D /* mainModel.m in Sources */,
 				CD2DC5CC1D17EF4A00BECF63 /* AppDelegate.m in Sources */,
+				CD3518211D192D680053065D /* zhnZhihuWebManager.m in Sources */,
 				CD2DC5C91D17EF4A00BECF63 /* main.m in Sources */,
+				CD35189C1D1A34370053065D /* UIView+zhnAdd.m in Sources */,
+				CD35181E1D190E550053065D /* mainViewController.m in Sources */,
+				CD3518281D19310B0053065D /* zhnZhihuWebManager+launch.m in Sources */,
+				CD35180E1D18DAD40053065D /* launchViewModel.m in Sources */,
+				CD3518111D18DB540053065D /* launchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,8 +589,11 @@
 		};
 		CD2DC5F21D17EF4A00BECF63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2486E6AE5B33E7CDA3EA782D /* Pods-RACzhihu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RACzhihuPch.pch";
 				INFOPLIST_FILE = RACzhihu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhn.RACzhihu;
@@ -420,8 +603,11 @@
 		};
 		CD2DC5F31D17EF4A00BECF63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76462CCA62E36A86EB5AA7F2 /* Pods-RACzhihu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RACzhihuPch.pch";
 				INFOPLIST_FILE = RACzhihu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhn.RACzhihu;
@@ -496,6 +682,7 @@
 				CD2DC5F31D17EF4A00BECF63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD2DC5F41D17EF4A00BECF63 /* Build configuration list for PBXNativeTarget "RACzhihuTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +691,7 @@
 				CD2DC5F61D17EF4A00BECF63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD2DC5F71D17EF4A00BECF63 /* Build configuration list for PBXNativeTarget "RACzhihuUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +700,7 @@
 				CD2DC5F91D17EF4A00BECF63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

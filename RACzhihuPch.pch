@@ -1,0 +1,26 @@
+//
+//  RACzhihuPch.pch
+//  RACzhihu
+//
+//  Created by zhn on 16/6/21.
+//  Copyright © 2016年 zhn. All rights reserved.
+//
+
+#ifndef RACzhihuPch_pch
+#define RACzhihuPch_pch
+
+#import "AFNetworking.h"
+#import "Masonry.h"
+#import "ReactiveCocoa.h"
+#import "UIImageView+WebCache.h"
+#import "YYModel.h"
+#import "RACEXTScope.h"
+#import "UIView+zhnAdd.h"
+
+// 屏幕宽度 屏幕高度
+#define KscreenWidth [UIScreen mainScreen].bounds.size.width
+#define KscreenHeight [UIScreen mainScreen].bounds.size.height
+#define zhnColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define KzhnSuccess @"success"
+#define KzhnError @"error"
+#endif /* RACzhihuPch_pch */
