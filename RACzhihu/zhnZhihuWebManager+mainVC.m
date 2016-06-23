@@ -17,4 +17,10 @@
 }
 
 
+- (void)getCurrtentDayStatus:(NSString *)currentDay success:(successBlock)success error:(errorBlock)z_error{
+    
+    NSString * url = [NSString stringWithFormat:@"news/before/%@",currentDay];
+    [self p_getStatusWithUrl:url parames:nil success:success error:z_error];
+}
+
 @end

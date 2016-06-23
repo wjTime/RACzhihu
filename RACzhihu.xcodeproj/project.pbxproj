@@ -25,6 +25,8 @@
 		CD35182E1D19353F0053065D /* mainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35182D1D19353F0053065D /* mainViewModel.m */; };
 		CD3518311D1937C70053065D /* mainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518301D1937C70053065D /* mainModel.m */; };
 		CD35189C1D1A34370053065D /* UIView+zhnAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35189B1D1A34370053065D /* UIView+zhnAdd.m */; };
+		CD3518A21D1B87300053065D /* mainContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518A11D1B87300053065D /* mainContentTableViewCell.m */; };
+		CD3518A41D1B87530053065D /* mainContentTableVIewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3518A31D1B87530053065D /* mainContentTableVIewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,9 @@
 		CD3518301D1937C70053065D /* mainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainModel.m; sourceTree = "<group>"; };
 		CD35189A1D1A34370053065D /* UIView+zhnAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+zhnAdd.h"; sourceTree = "<group>"; };
 		CD35189B1D1A34370053065D /* UIView+zhnAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+zhnAdd.m"; sourceTree = "<group>"; };
+		CD3518A01D1B87300053065D /* mainContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainContentTableViewCell.h; sourceTree = "<group>"; };
+		CD3518A11D1B87300053065D /* mainContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainContentTableViewCell.m; sourceTree = "<group>"; };
+		CD3518A31D1B87530053065D /* mainContentTableVIewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainContentTableVIewCell.xib; sourceTree = "<group>"; };
 		E7209CEFE8B639111F2A128E /* libPods-RACzhihu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RACzhihu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +192,9 @@
 				CD3518101D18DB540053065D /* launchViewController.m */,
 				CD35181C1D190E550053065D /* mainViewController.h */,
 				CD35181D1D190E550053065D /* mainViewController.m */,
+				CD3518A01D1B87300053065D /* mainContentTableViewCell.h */,
+				CD3518A11D1B87300053065D /* mainContentTableViewCell.m */,
+				CD3518A31D1B87530053065D /* mainContentTableVIewCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -366,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3518A41D1B87530053065D /* mainContentTableVIewCell.xib in Resources */,
 				CD2DC5D71D17EF4A00BECF63 /* LaunchScreen.storyboard in Resources */,
 				CD2DC5D41D17EF4A00BECF63 /* Assets.xcassets in Resources */,
 				CD2DC5D21D17EF4A00BECF63 /* Main.storyboard in Resources */,
@@ -451,6 +460,7 @@
 				CD35189C1D1A34370053065D /* UIView+zhnAdd.m in Sources */,
 				CD35181E1D190E550053065D /* mainViewController.m in Sources */,
 				CD3518281D19310B0053065D /* zhnZhihuWebManager+launch.m in Sources */,
+				CD3518A21D1B87300053065D /* mainContentTableViewCell.m in Sources */,
 				CD35180E1D18DAD40053065D /* launchViewModel.m in Sources */,
 				CD3518111D18DB540053065D /* launchViewController.m in Sources */,
 			);

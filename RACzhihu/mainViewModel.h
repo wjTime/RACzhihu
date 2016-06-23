@@ -14,5 +14,5 @@
 
 @property (nonatomic,strong) RACCommand * dataSourceCommand;
 
-
+@property (nonatomic,strong) RACSubject * hiddenNaviBottomSubject;
 @end

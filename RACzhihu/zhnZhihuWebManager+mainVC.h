@@ -12,4 +12,6 @@
 
 - (void)getMainLatestStatusSuccess:(successBlock)success error:(errorBlock)z_error;
 
+- (void)getCurrtentDayStatus:(NSString *)currentDay success:(successBlock)success error:(errorBlock)z_error;
+
 @end
