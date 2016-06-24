@@ -15,4 +15,10 @@
 @property (nonatomic,strong) RACCommand * dataSourceCommand;
 
 @property (nonatomic,strong) RACSubject * hiddenNaviBottomSubject;
+
+@property (nonatomic,strong) RACSubject * pushSubject;
+
+@property (nonatomic,strong) RACSubject * bannerSubject;
 @end
+
+

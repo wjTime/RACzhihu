@@ -60,11 +60,8 @@
             } error:^(id error) {
                 
             }];
-            
             return  nil;
-            
         }];
-    
         return launchSingle;
     }];
     

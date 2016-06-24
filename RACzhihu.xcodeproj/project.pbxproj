@@ -27,6 +27,11 @@
 		CD35189C1D1A34370053065D /* UIView+zhnAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35189B1D1A34370053065D /* UIView+zhnAdd.m */; };
 		CD3518A21D1B87300053065D /* mainContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518A11D1B87300053065D /* mainContentTableViewCell.m */; };
 		CD3518A41D1B87530053065D /* mainContentTableVIewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3518A31D1B87530053065D /* mainContentTableVIewCell.xib */; };
+		CD3518A71D1BDC730053065D /* zhnHuWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518A61D1BDC730053065D /* zhnHuWebViewController.m */; };
+		CD3518AA1D1BDE040053065D /* zhnZhihuWebManager+webVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518A91D1BDE040053065D /* zhnZhihuWebManager+webVIew.m */; };
+		CD3518AD1D1BE0B90053065D /* zhihuWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518AC1D1BE0B90053065D /* zhihuWebViewModel.m */; };
+		CD3518B01D1BE7390053065D /* zhihuWebViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518AF1D1BE7390053065D /* zhihuWebViewControllerModel.m */; };
+		CD3518B41D1D0A410053065D /* webViewContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518B31D1D0A410053065D /* webViewContainerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,16 @@
 		CD3518A01D1B87300053065D /* mainContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainContentTableViewCell.h; sourceTree = "<group>"; };
 		CD3518A11D1B87300053065D /* mainContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainContentTableViewCell.m; sourceTree = "<group>"; };
 		CD3518A31D1B87530053065D /* mainContentTableVIewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainContentTableVIewCell.xib; sourceTree = "<group>"; };
+		CD3518A51D1BDC730053065D /* zhnHuWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhnHuWebViewController.h; sourceTree = "<group>"; };
+		CD3518A61D1BDC730053065D /* zhnHuWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhnHuWebViewController.m; sourceTree = "<group>"; };
+		CD3518A81D1BDE040053065D /* zhnZhihuWebManager+webVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zhnZhihuWebManager+webVIew.h"; sourceTree = "<group>"; };
+		CD3518A91D1BDE040053065D /* zhnZhihuWebManager+webVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "zhnZhihuWebManager+webVIew.m"; sourceTree = "<group>"; };
+		CD3518AB1D1BE0B90053065D /* zhihuWebViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhihuWebViewModel.h; sourceTree = "<group>"; };
+		CD3518AC1D1BE0B90053065D /* zhihuWebViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhihuWebViewModel.m; sourceTree = "<group>"; };
+		CD3518AE1D1BE7390053065D /* zhihuWebViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhihuWebViewControllerModel.h; sourceTree = "<group>"; };
+		CD3518AF1D1BE7390053065D /* zhihuWebViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhihuWebViewControllerModel.m; sourceTree = "<group>"; };
+		CD3518B21D1D0A410053065D /* webViewContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewContainerController.h; sourceTree = "<group>"; };
+		CD3518B31D1D0A410053065D /* webViewContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewContainerController.m; sourceTree = "<group>"; };
 		E7209CEFE8B639111F2A128E /* libPods-RACzhihu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RACzhihu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,6 +207,10 @@
 				CD3518101D18DB540053065D /* launchViewController.m */,
 				CD35181C1D190E550053065D /* mainViewController.h */,
 				CD35181D1D190E550053065D /* mainViewController.m */,
+				CD3518B21D1D0A410053065D /* webViewContainerController.h */,
+				CD3518B31D1D0A410053065D /* webViewContainerController.m */,
+				CD3518A51D1BDC730053065D /* zhnHuWebViewController.h */,
+				CD3518A61D1BDC730053065D /* zhnHuWebViewController.m */,
 				CD3518A01D1B87300053065D /* mainContentTableViewCell.h */,
 				CD3518A11D1B87300053065D /* mainContentTableViewCell.m */,
 				CD3518A31D1B87530053065D /* mainContentTableVIewCell.xib */,
@@ -206,6 +225,8 @@
 				CD3518141D18FF3F0053065D /* launchModel.m */,
 				CD35182F1D1937C70053065D /* mainModel.h */,
 				CD3518301D1937C70053065D /* mainModel.m */,
+				CD3518AB1D1BE0B90053065D /* zhihuWebViewModel.h */,
+				CD3518AC1D1BE0B90053065D /* zhihuWebViewModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -217,6 +238,8 @@
 				CD35180D1D18DAD40053065D /* launchViewModel.m */,
 				CD35182C1D19353F0053065D /* mainViewModel.h */,
 				CD35182D1D19353F0053065D /* mainViewModel.m */,
+				CD3518AE1D1BE7390053065D /* zhihuWebViewControllerModel.h */,
+				CD3518AF1D1BE7390053065D /* zhihuWebViewControllerModel.m */,
 			);
 			name = viewModel;
 			sourceTree = "<group>";
@@ -230,6 +253,8 @@
 				CD3518271D19310B0053065D /* zhnZhihuWebManager+launch.m */,
 				CD3518291D1932620053065D /* zhnZhihuWebManager+mainVC.h */,
 				CD35182A1D1932620053065D /* zhnZhihuWebManager+mainVC.m */,
+				CD3518A81D1BDE040053065D /* zhnZhihuWebManager+webVIew.h */,
+				CD3518A91D1BDE040053065D /* zhnZhihuWebManager+webVIew.m */,
 			);
 			name = netWork;
 			sourceTree = "<group>";
@@ -450,19 +475,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3518AD1D1BE0B90053065D /* zhihuWebViewModel.m in Sources */,
 				CD3518151D18FF3F0053065D /* launchModel.m in Sources */,
 				CD35182E1D19353F0053065D /* mainViewModel.m in Sources */,
 				CD35182B1D1932620053065D /* zhnZhihuWebManager+mainVC.m in Sources */,
 				CD3518311D1937C70053065D /* mainModel.m in Sources */,
 				CD2DC5CC1D17EF4A00BECF63 /* AppDelegate.m in Sources */,
+				CD3518B01D1BE7390053065D /* zhihuWebViewControllerModel.m in Sources */,
+				CD3518AA1D1BDE040053065D /* zhnZhihuWebManager+webVIew.m in Sources */,
 				CD3518211D192D680053065D /* zhnZhihuWebManager.m in Sources */,
 				CD2DC5C91D17EF4A00BECF63 /* main.m in Sources */,
 				CD35189C1D1A34370053065D /* UIView+zhnAdd.m in Sources */,
+				CD3518B41D1D0A410053065D /* webViewContainerController.m in Sources */,
 				CD35181E1D190E550053065D /* mainViewController.m in Sources */,
 				CD3518281D19310B0053065D /* zhnZhihuWebManager+launch.m in Sources */,
 				CD3518A21D1B87300053065D /* mainContentTableViewCell.m in Sources */,
 				CD35180E1D18DAD40053065D /* launchViewModel.m in Sources */,
 				CD3518111D18DB540053065D /* launchViewController.m in Sources */,
+				CD3518A71D1BDC730053065D /* zhnHuWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

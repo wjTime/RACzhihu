@@ -11,9 +11,10 @@
 #import "mainViewModel.h"
 #import "mainModel.h"
 #import "SDCycleScrollView.h"
+#import "webViewContainerController.h"
 
-static CGFloat KbannerViewHeight = 250;
-@interface mainViewController ()<UITableViewDelegate>
+static CGFloat KbannerViewHeight = 200;
+@interface mainViewController ()<UITableViewDelegate,SDCycleScrollViewDelegate>
 
 @property (nonatomic,strong) mainViewModel * viewModel;
 @property (nonatomic,weak) SDCycleScrollView * bannerView;
@@ -27,8 +28,9 @@ static CGFloat KbannerViewHeight = 250;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    UITableView * mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, KscreenWidth, KscreenHeight) style:UITableViewStylePlain];
+    [UIApplication sharedApplication].keyWindow.backgroundColor = [UIColor whiteColor];
+    // tableview的frame navigationcontroller 和直接设置成rootviewcontroller参照的位置是不一样的的啊 
+    UITableView * mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KscreenWidth, KscreenHeight) style:UITableViewStylePlain];
     mainTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:mainTableView];
     mainTableView.delegate = self;
@@ -59,6 +61,14 @@ static CGFloat KbannerViewHeight = 250;
     bannerView.titleLabelBackgroundColor = [UIColor clearColor];
     self.bannerView = bannerView;
     [self.view addSubview:bannerView];
+    [self.viewModel.bannerSubject subscribeNext:^(NSArray * array) {
+        mainModel * status = array[0];
+        NSArray * idArray = array[1];
+        webViewContainerController  * contentWebView = [[webViewContainerController alloc]init];
+        contentWebView.statusModel = status;
+        contentWebView.allContentStoriesArray = idArray;
+        [self.navigationController pushViewController:contentWebView animated:YES];
+    }];
     
     // 数据的处理
     RACSignal * statusSignal =  [self.viewModel.todayStatusCommand execute:bannerView];
@@ -67,7 +77,7 @@ static CGFloat KbannerViewHeight = 250;
             [mainTableView reloadData];
         }
     }];
-
+    
     // naviBar
     self.navigationController.navigationBar.hidden = YES;
     UIView * zhnNaviBar = [[UIView alloc]init];
@@ -117,6 +127,16 @@ static CGFloat KbannerViewHeight = 250;
         }
     }];
     
+    [self.viewModel.pushSubject subscribeNext:^(NSArray * array) {
+       
+        mainModel * status = array[0];
+        NSArray * idArray = array[1];
+        webViewContainerController  * contentWebView = [[webViewContainerController alloc]init];
+        contentWebView.statusModel = status;
+        contentWebView.allContentStoriesArray = idArray;
+        [self.navigationController pushViewController:contentWebView animated:YES];
+        
+    }];
     
     launchViewController * launchVC = [[launchViewController alloc]init];
     [launchVC didMoveToParentViewController:self];

@@ -14,13 +14,17 @@
 
 static const CGFloat KcellHeight = 90;
 
-@interface mainViewModel()<UITableViewDataSource,UITableViewDelegate>
+@interface mainViewModel()<UITableViewDataSource,UITableViewDelegate,SDCycleScrollViewDelegate>
 
 @property (nonatomic,strong) UITableView * mainTableView;
 
 @property (nonatomic,strong) NSMutableArray * contentStatusArray;
 
 @property (nonatomic,strong) NSMutableArray * currentDateArray;
+
+@property (nonatomic,strong) NSMutableArray * storyIdArray;
+
+@property (nonatomic,copy) NSArray * bannerArray;
 
 @property (nonatomic,copy) NSString * currentLoadDate;
 
@@ -46,6 +50,7 @@ static const CGFloat KcellHeight = 90;
     _todayStatusCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
         
         SDCycleScrollView * bannerView = (SDCycleScrollView *)input;
+        bannerView.delegate = self;
         
         RACSignal * requestSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             
@@ -56,14 +61,21 @@ static const CGFloat KcellHeight = 90;
                 [self.currentDateArray addObject:success[@"date"]];
                 
                 NSArray * banerArray = [NSArray yy_modelArrayWithClass:[mainModel class] json:success[@"top_stories"]];
+                self.bannerArray = banerArray;
                 
                 NSArray * todayArray = [NSArray yy_modelArrayWithClass:[mainModel class] json:success[@"stories"]];
                 
-                [self.contentStatusArray addObject:todayArray];
+                // 添加一波story的id 为了滑动上一组下一组做准备
+                for (mainModel * tempModel in todayArray) {
+                    [self.storyIdArray addObject:tempModel.id];
+                }
                 
+                [self.contentStatusArray addObject:todayArray];
+            
                 NSMutableArray * imageArray = [NSMutableArray array];
                 NSMutableArray * titleArray = [NSMutableArray array];
                 for (mainModel * tempModel in banerArray) {
+                
                     [imageArray addObject:tempModel.image];
                     [titleArray addObject:tempModel.title];
                 }
@@ -94,6 +106,8 @@ static const CGFloat KcellHeight = 90;
     }];
     
     _hiddenNaviBottomSubject = [RACSubject subject];
+    _pushSubject = [RACSubject subject];
+    _bannerSubject = [RACSubject subject];
 }
 
 
@@ -110,6 +124,14 @@ static const CGFloat KcellHeight = 90;
         _currentDateArray = [NSMutableArray array];
     }
     return _currentDateArray;
+}
+
+- (NSMutableArray *)storyIdArray{
+    
+    if (_storyIdArray == nil ) {
+        _storyIdArray = [NSMutableArray array];
+    }
+    return _storyIdArray;
 }
 
 #pragma mark -  datasource
@@ -161,6 +183,7 @@ static const CGFloat KcellHeight = 90;
     }
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section > 0) {
         return 44;
@@ -181,6 +204,9 @@ static const CGFloat KcellHeight = 90;
                 self.currentLoadDate = success[@"date"];
                 [self.currentDateArray addObject:success[@"date"]];
                 NSArray * currtentContentStatus = [NSArray yy_modelArrayWithClass:[mainModel class] json:success[@"stories"]];
+                for (mainModel * tempModel in currtentContentStatus) {
+                    [self.storyIdArray addObject:tempModel.id];
+                }
                 [self.contentStatusArray addObject:currtentContentStatus];
                 NSIndexSet * count = [NSIndexSet indexSetWithIndex:self.contentStatusArray.count - 1] ;
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -202,7 +228,16 @@ static const CGFloat KcellHeight = 90;
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSArray * sectionArray = self.contentStatusArray[indexPath.section];
+    mainModel * currentModel = sectionArray[indexPath.row];
+    [_pushSubject sendNext:@[currentModel,self.storyIdArray]];
+}
 
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    [_bannerSubject sendNext:@[self.bannerArray[index],self.storyIdArray]];
+}
 
 
 @end
