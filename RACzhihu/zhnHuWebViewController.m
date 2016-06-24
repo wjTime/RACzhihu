@@ -9,6 +9,8 @@
 #import "zhnHuWebViewController.h"
 #import "zhihuWebViewControllerModel.h"
 #import "zhihuWebViewModel.h"
+#import "WebViewJavascriptBridge.h"
+
 
 @interface zhnHuWebViewController ()<UIWebViewDelegate>
 
@@ -16,6 +18,9 @@
 
 @property (nonatomic,strong) zhihuWebViewModel * model;
 
+@property (nonatomic,strong) NSMutableArray * allImagesOfThisArticle;
+
+@property (nonatomic,strong) WebViewJavascriptBridge * bridge;
 @end
 
 @implementation zhnHuWebViewController
@@ -30,6 +35,11 @@
     contentWebView.delegate = self;
     [contentWebView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(-20, 0, 0, 0));
+    }];
+    _bridge  = [WebViewJavascriptBridge bridgeForWebView:contentWebView];
+    [_bridge setWebViewDelegate:self];
+    [_bridge registerHandler:@"imageHandle" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"a");
     }];
     
     // 头部位置
@@ -103,10 +113,10 @@
         [headImageView sd_setImageWithURL:[NSURL URLWithString:model.image]];
         
         editLabel.text = model.image_source;
-        
-        NSString * htmlStr = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=%@></head><body>%@</body></html>",model.css[0],model.body];
+        NSString * newBody = [model.body stringByReplacingOccurrencesOfString:@"src" withString:@"esrc"];
+        NSString * htmlStr = [NSString stringWithFormat:@"<html><head> <script type=\"text/javascript\" src=\"test.js\"></script><link rel=\"stylesheet\" href=%@></head><body onload = \"onLoaded()\"> %@ </body></html>",model.css[0],newBody];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [contentWebView loadHTMLString:htmlStr baseURL:nil];
+            [contentWebView loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]bundlePath]]];
         });
         
     }];
@@ -126,6 +136,44 @@
         _delegateSubject = [RACSubject subject];
     }
     return _delegateSubject;
+}
+
+#pragma mark -- 下载全部图片
+-(void)downloadAllImagesInNative:(NSArray *)imageUrls{
+    
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    
+    //初始化一个置空元素数组
+    _allImagesOfThisArticle = [NSMutableArray arrayWithCapacity:imageUrls.count];//本地的一个用于保存所有图片的数组
+    for (NSUInteger i = 0; i < imageUrls.count-1; i++) {
+        [_allImagesOfThisArticle addObject:[NSNull null]];
+    }
+    
+    for (NSUInteger i = 0; i < imageUrls.count-1; i++) {
+        NSString *_url = imageUrls[i];
+        
+        [manager downloadImageWithURL:[NSURL URLWithString:_url] options:SDWebImageHighPriority progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            
+            if (image) {
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    
+                    NSString *imgB64 = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+                    
+                    //把图片在磁盘中的地址传回给JS
+                    NSString *key = [manager cacheKeyForURL:imageURL];
+                    
+                    NSString *source = [NSString stringWithFormat:@"data:image/png;base64,%@", imgB64];
+                    [_bridge callHandler:@"imagesDownloadComplete" data:@[key,source]];
+                    
+                });
+                
+            }
+            
+        }];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

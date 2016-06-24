@@ -27,6 +27,7 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - WebViewJavascriptBridge (5.0.5)
   - YYModel (1.0.3)
 
 DEPENDENCIES:
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - ReactiveCocoa (~> 2.5)
   - SDCycleScrollView (~> 1.64)
   - SDWebImage
+  - WebViewJavascriptBridge (~> 5.0)
   - YYModel
 
 SPEC CHECKSUMS:
@@ -43,8 +45,9 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDCycleScrollView: 806fedb9342ab03b58b84442f985517b42c7cbb7
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  WebViewJavascriptBridge: a4d502315f1b8d9a51cd6a9174147ed567ec3bc5
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
 
-PODFILE CHECKSUM: 26da28299ba2ff4fb684122c8adbdb397e8186ce
+PODFILE CHECKSUM: 26b0f5536ac6a5be0bccc6222dc93c696f6faa66
 
 COCOAPODS: 1.0.0

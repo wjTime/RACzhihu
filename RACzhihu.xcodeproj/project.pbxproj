@@ -32,6 +32,7 @@
 		CD3518AD1D1BE0B90053065D /* zhihuWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518AC1D1BE0B90053065D /* zhihuWebViewModel.m */; };
 		CD3518B01D1BE7390053065D /* zhihuWebViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518AF1D1BE7390053065D /* zhihuWebViewControllerModel.m */; };
 		CD3518B41D1D0A410053065D /* webViewContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3518B31D1D0A410053065D /* webViewContainerController.m */; };
+		CD7F30E51D1D361D0027D60D /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = CD7F30E41D1D361D0027D60D /* test.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		CD3518AF1D1BE7390053065D /* zhihuWebViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhihuWebViewControllerModel.m; sourceTree = "<group>"; };
 		CD3518B21D1D0A410053065D /* webViewContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewContainerController.h; sourceTree = "<group>"; };
 		CD3518B31D1D0A410053065D /* webViewContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewContainerController.m; sourceTree = "<group>"; };
+		CD7F30E41D1D361D0027D60D /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		E7209CEFE8B639111F2A128E /* libPods-RACzhihu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RACzhihu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 		CD2DC5BB1D17EF4A00BECF63 = {
 			isa = PBXGroup;
 			children = (
+				CD7F30E41D1D361D0027D60D /* test.js */,
 				CD3518121D18DC980053065D /* RACzhihuPch.pch */,
 				CD2DC5C61D17EF4A00BECF63 /* RACzhihu */,
 				CD3518321D1939B30053065D /* lib */,
@@ -399,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7F30E51D1D361D0027D60D /* test.js in Resources */,
 				CD3518A41D1B87530053065D /* mainContentTableVIewCell.xib in Resources */,
 				CD2DC5D71D17EF4A00BECF63 /* LaunchScreen.storyboard in Resources */,
 				CD2DC5D41D17EF4A00BECF63 /* Assets.xcassets in Resources */,
