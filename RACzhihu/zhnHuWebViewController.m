@@ -21,6 +21,8 @@
 @property (nonatomic,strong) NSMutableArray * allImagesOfThisArticle;
 
 @property (nonatomic,strong) WebViewJavascriptBridge * bridge;
+
+@property (nonatomic,weak) UIImageView * contentImageView;
 @end
 
 @implementation zhnHuWebViewController
@@ -38,9 +40,14 @@
     }];
     _bridge  = [WebViewJavascriptBridge bridgeForWebView:contentWebView];
     [_bridge setWebViewDelegate:self];
-    [_bridge registerHandler:@"imageHandle" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSLog(@"a");
+   
+    @weakify(self)
+    [_bridge registerHandler:@"imagJavascriptHandler" handler:^(id data, WVJBResponseCallback responseCallback) {
+        @strongify(self)
+        [self downloadAllImagesInNative:data];
+        
     }];
+    
     
     // 头部位置
     UIImageView * headImageView = [[UIImageView alloc]init];
@@ -114,7 +121,8 @@
         
         editLabel.text = model.image_source;
         NSString * newBody = [model.body stringByReplacingOccurrencesOfString:@"src" withString:@"esrc"];
-        NSString * htmlStr = [NSString stringWithFormat:@"<html><head> <script type=\"text/javascript\" src=\"test.js\"></script><link rel=\"stylesheet\" href=%@></head><body onload = \"onLoaded()\"> %@ </body></html>",model.css[0],newBody];
+        NSString * htmlStr = [NSString stringWithFormat:@"<html><head> <script type=\"text/javascript\" src=\"test.js\"></script><link rel=\"stylesheet\" href=%@></head><body onload = \"loadHtml()\"> %@ </body></html>",model.css[0],newBody];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [contentWebView loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]bundlePath]]];
         });
@@ -122,6 +130,68 @@
     }];
     
     [self.viewModel.scrollCommand execute:@[headImageView,previousStoryView,arrowImageView,self.view,self.delegateSubject]];
+    
+    
+    [_bridge registerHandler:@"showImage" handler:^(id data, WVJBResponseCallback responseCallback) {
+        @strongify(self)
+        if (!self.contentImageView) {
+            
+            UIImageView * contentShowImage = [[UIImageView alloc]init];
+            contentShowImage.userInteractionEnabled = YES;
+            [self.view addSubview:contentShowImage];
+            UIImage * currentImage = [UIImage imageWithContentsOfFile:data];
+            contentShowImage.image = currentImage;
+            UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissContentImage)];
+            self.contentImageView = contentShowImage;
+            [contentShowImage addGestureRecognizer:tap];
+            CGFloat width = currentImage.size.width;
+            CGFloat height = currentImage.size.height;
+            
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                
+                CGFloat fitWidth;
+                CGFloat fitHeight;
+                CGFloat scaleW = width / KscreenWidth;
+                CGFloat scaleH = height / KscreenHeight;
+                
+                if (scaleW > scaleH) {
+                    fitWidth = KscreenWidth;
+                    fitHeight = height / scaleW;
+                }else{
+                    fitHeight = KscreenHeight;
+                    fitWidth = width / scaleH;
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [contentShowImage mas_makeConstraints:^(MASConstraintMaker *make) {
+                        
+                        make.center.equalTo(self.view);
+                        make.height.mas_equalTo(fitHeight);
+                        make.width.mas_equalTo(fitWidth);
+                        
+                    }];
+                    
+                    contentShowImage.transform = CGAffineTransformMakeScale(0, 0);
+                    [UIView animateWithDuration:0.3 animations:^{
+                        contentShowImage.transform = CGAffineTransformIdentity;
+                    }];
+                });
+            });
+
+        }
+   
+    }];
+        
+    
+}
+
+- (void)dismissContentImage{
+
+    [UIView animateWithDuration:0.3 animations:^{
+        self.contentImageView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    } completion:^(BOOL finished) {
+        [self.contentImageView removeFromSuperview];
+    }];
+    
 }
 
 - (zhihuWebViewControllerModel *)viewModel{
@@ -141,39 +211,38 @@
 #pragma mark -- 下载全部图片
 -(void)downloadAllImagesInNative:(NSArray *)imageUrls{
     
-    SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    
-    //初始化一个置空元素数组
-    _allImagesOfThisArticle = [NSMutableArray arrayWithCapacity:imageUrls.count];//本地的一个用于保存所有图片的数组
-    for (NSUInteger i = 0; i < imageUrls.count-1; i++) {
-        [_allImagesOfThisArticle addObject:[NSNull null]];
-    }
-    
-    for (NSUInteger i = 0; i < imageUrls.count-1; i++) {
-        NSString *_url = imageUrls[i];
+ 
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        //初始化一个置空元素数组
+        _allImagesOfThisArticle = [NSMutableArray arrayWithCapacity:imageUrls.count];//本地的一个用于保存所有图片的数组
+        for (NSUInteger i = 0; i < imageUrls.count-1; i++) {
+            [_allImagesOfThisArticle addObject:[NSNull null]];
+        }
         
-        [manager downloadImageWithURL:[NSURL URLWithString:_url] options:SDWebImageHighPriority progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        for (NSUInteger i = 0; i < imageUrls.count-1; i++) {
+            NSString *_url = imageUrls[i];
             
-            if (image) {
+            [manager downloadImageWithURL:[NSURL URLWithString:_url] options:SDWebImageHighPriority progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                 
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                if (image) {
                     
-                    NSString *imgB64 = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        
+                        //把图片在磁盘中的地址传回给JS
+                        NSString *key = [manager cacheKeyForURL:imageURL];
+                        //本地路径
+                        NSString * source = [[SDImageCache sharedImageCache] defaultCachePathForKey:key];
+                        
+                        [_bridge callHandler:@"imagesDownloadComplete" data:@[key,source]];
+                        
+                    });
                     
-                    //把图片在磁盘中的地址传回给JS
-                    NSString *key = [manager cacheKeyForURL:imageURL];
-                    
-                    NSString *source = [NSString stringWithFormat:@"data:image/png;base64,%@", imgB64];
-                    [_bridge callHandler:@"imagesDownloadComplete" data:@[key,source]];
-                    
-                });
+                }
                 
-            }
+            }];
             
-        }];
-        
-    }
-    
+        }
+
 }
 
 - (void)didReceiveMemoryWarning {
