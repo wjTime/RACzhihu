@@ -14,17 +14,12 @@ function setupWebViewJavascriptBridge(callback) {
               
                          
         var objs = document.getElementsByTagName("img");
-                                 var url;
-                                 var x;
-                                 var y;
-                                 var width;
-                                 var height;
         for(var i=0;i<objs.length;i++)
             {
                 objs[i].onclick = function()
             {
-                                 url = this.getAttribute("src");
                                  
+            url = this.getAttribute("src");
             bridge.callHandler('showImage', url, function(response) {
                                                     
             })
@@ -45,7 +40,6 @@ function setupWebViewJavascriptBridge(callback) {
                                  
                                  
         bridge.callHandler('imagJavascriptHandler', imageUrlsArray, function(response) {
-                       
         })
                
                                  

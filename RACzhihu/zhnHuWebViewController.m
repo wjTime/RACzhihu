@@ -45,7 +45,6 @@
     [_bridge registerHandler:@"imagJavascriptHandler" handler:^(id data, WVJBResponseCallback responseCallback) {
         @strongify(self)
         [self downloadAllImagesInNative:data];
-        
     }];
     
     
